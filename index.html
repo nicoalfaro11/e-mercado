@@ -17,7 +17,6 @@
     html, body{
       height: 100%;
     }
-
     body {
       display: -ms-flexbox;
       display: flex;
@@ -25,7 +24,9 @@
       align-items: center;
       padding-top: 40px;
       padding-bottom: 40px;
-      background-color: #328c9c;
+      background-image: url('img/degrade.png');
+      background-repeat: no-repeat;
+      background-size: 100%;
     }
 
     .signin {
@@ -35,15 +36,14 @@
       margin: auto;
     }
     #inputs{
-      background-color: seashell;
       border-radius: 60px;
-      margin: 40px;
       height: 300px;
-
+      width: 300px;
+      margin-left: 350px;
     }
     #iniciar{
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      color:darkcyan;
+      color:white;
     }
     label{
       font-size: 18px;
@@ -62,13 +62,27 @@
       background-color: #328c9c;
       color: white;
     }
+    #imagen{
+     margin-top: 500px;
+     width: 700px;
+     height: 180px;
+     margin-top: 5px;
+    }
+    #merpago{
+      height: 100px;
+      width: 300px;
+      border-radius: 80px;
+      margin-top: 18px;
+      margin-right: 50px;
+    }
   </style>
 </head>
 
 <body class="text-center">
-  <div class="container p-5">
-     <img width="900px" style="border-radius: 50px;" src="img/cover_back.png" alt="Log-In">
+  <div id="contenedor" class="container p-5"> 
+    <img  style="border-radius: 50px;" src="img/cover_back.png" id="imagen" alt="Log-In">
      <br><br>
+     <img src="img/mercadopago.png" id="merpago" alt="">
      <div id="inputs"><br>
       <h2 id="iniciar">Iniciar Seción</h2>
       <label for="nombre">Escriba su nombre</label> 
