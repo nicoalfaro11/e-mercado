@@ -13,103 +13,50 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    html, body{
-      height: 100%;
-    }
-    body {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-image: url('img/degrade.png');
-      background-repeat: no-repeat;
-      background-size: 100%;
-    }
-
-    .signin {
-      width: 100%;
-      max-width: 330px;
-      padding: 15px;
-      margin: auto;
-    }
-    #inputs{
-      border-radius: 60px;
-      height: 300px;
-      width: 300px;
-      margin-left: 350px;
-    }
-    #iniciar{
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      color:white;
-    }
-    label{
-      font-size: 18px;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-    #nombre{
-      border-style:ridge;
-      border-radius: 60px;
-    }
-    #contraseña{
-      border-style: ridge;
-      border-radius: 60px;
-    }
-    button{
-      border-radius: 5px;
-      background-color: #328c9c;
-      color: white;
-    }
-    #imagen{
-     margin-top: 500px;
-     width: 700px;
-     height: 180px;
-     margin-top: 5px;
-    }
-    #merpago{
-      height: 100px;
-      width: 300px;
-      border-radius: 80px;
-      margin-top: 18px;
-      margin-right: 50px;
-    }
-  </style>
 </head>
+<style>
+body{
+  background-image: url('img/degrade.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+h2{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color:mintcream;
+  letter-spacing: 1px;
 
-<body class="text-center">
-  <div id="contenedor" class="container p-5"> 
-    <img  style="border-radius: 50px;" src="img/cover_back.png" id="imagen" alt="Log-In">
-     <br><br>
-     <img src="img/mercadopago.png" id="merpago" alt="">
-     <div id="inputs"><br>
-      <h2 id="iniciar">Iniciar Seción</h2>
-      <label for="nombre">Escriba su nombre</label> 
-      <br>
-      <input type="text" id="nombre" alt="Escriba su nombre">
-      <br>
-      <label for="contraseña">Escriba su contraseña</label>
-      <br>
-      <input type="password" id="contraseña">
-      <br>
-      <br>
-      <button type="submit" alt="Ingresar" onclick="redireccion()"> Ingresar </button>
-     </div>
-     </div>
+}
+.container{
+  padding-top: 50px;
+  border-radius: 40px;
+}
+img{
+  width: 400px;
+  border-radius: 30px;
+}
+
+</style>
+<body>
+  <div class="container">
+    <img class="img-responsive img-circle" src="img/login.png" alt="">     
+  </div>
+ <div class="container">
+   <h2>Iniciar Seción</h2><br>
+  <form >
+      <div class="col-md-5">
+        <input class="form-control" type="text" name="" id="usuario" placeholder="Usuario">
+      </div>
+    <br>
+      <div class="col-md-5">
+        <input class="form-control" type="password" name="" id="contraseña" placeholder="Contraseña">
+      </div>
+    <br>
+  </form>
+  <button class="btn btn-success" id="boton"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
+    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+  </svg>Ingresar</button>
+ </div>  
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
-  <script>
-    function redireccion(){
-      let nombre = document.getElementById('nombre').value;
-      let contraseña = document.getElementById('contraseña').value;
-      if(nombre.length > 0 && contraseña.length > 0){
-        location.href="index2.html"
-      }
-      else{
-        alert('Ingrese sus datos');
-      }
-    }
-  </script>
 </body>
-</html>
+</html> 

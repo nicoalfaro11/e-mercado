@@ -1,29 +1,29 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+let listado = []
+function mostrarListado(unListado){
+ unListado.forEach(elemento => {
+     contenido = `
+        <div class="row" style=""> 
+            <div class="col-3">
+                <img src="` + elemento.imgSrc + `" alt="` + elemento.description + `" class="img-thumbnail">
+            </div>
+             <div class="col">
+            <div class="d-flex w-100 justify-content-between">
+                    <h4 class="mb-1">`+ elemento.name +`</h4>
+                    <small class="text-muted">` + elemento.cost + elemento.currency + `</small>
+             </div>
+             <p class="mb-1">` + elemento.description + `</p>
+         </div>
+     </div>
+ `
+                  document.getElementById('cat-list-container').innerHTML += contenido
+}); 
+
+}
 document.addEventListener("DOMContentLoaded", function (e) {
-    const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
-    fetch(PRODUCTS_URL)
-    .then(respuesta => respuesta.json())
-    .then(datos => { 
-        datos.forEach(datos => {
-            
-            let row = "";
-            row = `
-        <tr>
-            <td>` + datos.name + ` </td>
-            <td>` + datos.description + `</td>
-            <td>` + datos.cost + `</td>
-            <td>` + datos.currency + `</td>
-            <td>` + datos.soldCount + `</td>
-            <td><img heigth="100px" width="100px" src="` + datos.imgSrc + `" alt=""></td>
-        </tr>`
-          
-          document.getElementById("tabla").innerHTML += row;
-        
-        })
-    
-    })
-    
-    .catch(error => alert("Hubo un error:" + error)) 
+getJSONData(PRODUCTS_URL).then(function(resultado){
+    if(resultado.status === 'ok'){
+        listado = resultado.data;
+        mostrarListado(listado);
+    }
+})
 })
