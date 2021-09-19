@@ -1,16 +1,16 @@
 var minCount = undefined;
 var maxCount = undefined;
 
-
 let listado = []
 function mostrarListado(unListado){
  unListado.forEach(elemento => {
    
     if (((minCount == undefined) || (minCount != undefined && parseInt(elemento.cost) >= minCount)) &&
         ((maxCount == undefined) || (maxCount != undefined && parseInt(elemento.cost) <= maxCount))){
-   
+        
         contenido = `
-        <div class="row" style=""> 
+        <a id="linkProduct" onClick="mostrarProducto(`+elemento.id+`)" href="product-info.html" class="list-group-item list-group-item-action">
+        <div class="row">
             <div class="col-3">
                 <img src="` + elemento.imgSrc + `" alt="` + elemento.description + `" class="img-thumbnail">
             </div>
@@ -20,13 +20,16 @@ function mostrarListado(unListado){
                     <small class="text-muted">` + elemento.cost + elemento.currency + `</small>
              </div>
              <p class="mb-1">` + elemento.description + `</p>
-         </div>  
+         </div>
      </div>
+    </a>
  `
                   document.getElementById('cat-list-container').innerHTML += contenido
     } 
 }); 
-
+}
+function mostrarProducto(id) {
+    window.localStorage.setItem('producto', id);
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -35,7 +38,6 @@ getJSONData(PRODUCTS_URL).then(function(resultado){
         listado = resultado.data;
         mostrarListado(listado);
     };
-
 })
 document.getElementById("sortAsc").addEventListener("click", function(){
         listado.sort(function(a,b){

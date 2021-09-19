@@ -1,9 +1,9 @@
 const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
-const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
-const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678.json";
-const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
+const PRODUCTS_URL = "https://nicoalfaro11.github.io/autosJson/json/productos.json";
+const PRODUCT_INFO_URL = "https://nicoalfaro11.github.io/autosJson/json/";
+const PRODUCT_INFO_COMMENTS_URL = "https://nicoalfaro11.github.io/comentsJson/";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
@@ -49,3 +49,4 @@ let logueado = localStorage.getItem('usuario')
     document.getElementById('user').innerHTML += 'Usuario: ' + logueado;
   }
 });
+ 

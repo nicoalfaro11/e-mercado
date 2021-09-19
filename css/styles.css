@@ -139,3 +139,16 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+#linkProduct:hover{
+  background-color: #67a8dd;
+}
+
+#imgProduct:hover{
+  transform: scale(1.1);
+  box-shadow: 5px 0px 10px rgb(70, 111, 145);
+}
+textarea{
+  
+  width: 500px;
+  border-radius: 30px;
+}
