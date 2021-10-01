@@ -25,8 +25,8 @@ function mostrarListado(unListado){
     </a>
  `
                   document.getElementById('cat-list-container').innerHTML += contenido
-    } 
-}); 
+    }
+});
 }
 function mostrarProducto(id) {
     window.localStorage.setItem('producto', id);

@@ -20,8 +20,15 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" style="color: white;" id="user"></a>
+      <div class="dropdown">
+        <button id="user" class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+          <a onclick="cerrarSecion()" class="dropdown-item" href="index.html">Cerrar Secion</a>
+        </div>
+      </div>
     </div>
   </nav>
   <main role="main">
@@ -53,9 +60,25 @@
           </div>
         </dd>
       </dl>
-      <div id="comentarios"></div>
-      <textarea name="text" id="newComents" cols="30" rows="10"></textarea><br>
-      <button id="enviarComent" class="btn btn-dark">Enviar Comentario</button>
+      <h2>Reseñas:</h2>
+      <br>
+      <div id="comentFlex">
+        <div id="comentarios">
+        </div>
+        <div>
+          <h2>Escribi tu comentario</h2>
+        <textarea class="form-control" name="text" id="newComents"></textarea><br>
+        <button id="enviarComent" class="btn btn-dark">Enviar Comentario</button>
+        </div>
+      </div>
+      <br><br>
+      <h3 class="text-muted">Productos Relacionados</h3>
+      <br>
+      <div class="container">
+        <div class="row" id="rela">
+        </div>
+      </div>
+      <br><br>
       <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
   </main>
@@ -78,7 +101,8 @@
   </div>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="js/init.js"></script>
 </body>
 </html>
