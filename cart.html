@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
-
+  
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
@@ -46,19 +46,49 @@
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="cart.html">Mi Carrito</a>
           <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
-          <a onclick="cerrarSecion()" class="dropdown-item" href="index.html">Cerrar Secion</a>
+          <a onclick="cerrarSecion()" class="dropdown-item" href="index.html">Cerrar Sesion</a>
         </div>
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <br>
+  <div class="container">
+    <h1>Tu carrito de compras</h1>
   </div>
+  <br>
+  <div class="container">
+    <table id="articulo" class="table table-bordered table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Articulo</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Moneda</th>
+          <th scope="col">Precio por unidad</th>
+          <th scope="col">Sub Total</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <br>
+  <div class="container">
+    <form action="">
+      <h1 id="cosTot">Costo Total:</h1>
+      <br>
+      <h1>Datos del envio</h1>
+      <label for="in1">Nombre Completo</label><br>
+      <input id="in1" class="form-control" type="text">
+      <label for="in2">Documento</label><br>
+      <input class="form-control" id="in2" type="text">
+      <label for="in3">Numero de telefono</label><br>
+      <input class="form-control" id="in3" type="text">
+      <label for="in4">Direccion del envio</label><br>
+      <textarea class="form-control" name="" id="in4" cols="30" rows="10"></textarea><br>
+      <button class="btn btn-primary" type="submit">Enviar</button>
+
+    </form>
+  </div>
+  <br>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
