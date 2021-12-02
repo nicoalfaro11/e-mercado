@@ -7,10 +7,18 @@ document.addEventListener("DOMContentLoaded", function(e){
     let contraseña = document.getElementById('contraseña').value;
     if(usuario.length > 0 && contraseña.length > 0){
       localStorage.setItem('usuario', usuario);
+      let userData = {
+        nombre: "",
+        apellido:"",
+        email: "",
+        edad: "",
+        tel: "",
+      }
+      localStorage.setItem('userData', JSON.stringify(userData))
       location.href="inicio.html";
     }
     else{
-      alert('Ingrese sus datos');
+      alert('Ingrese sus datos correctamente');
     }
   })
-}); 
+});

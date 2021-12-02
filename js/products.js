@@ -9,20 +9,16 @@ function mostrarListado(unListado){
         ((maxCount == undefined) || (maxCount != undefined && parseInt(elemento.cost) <= maxCount))){
         
         contenido = `
-        <a id="linkProduct" onClick="mostrarProducto(`+elemento.id+`)" href="product-info.html" class="list-group-item list-group-item-action">
-        <div class="row">
-            <div class="col-3">
-                <img src="` + elemento.imgSrc + `" alt="` + elemento.description + `" class="img-thumbnail">
-            </div>
-             <div class="col">
-            <div class="d-flex w-100 justify-content-between">
-                    <h4 class="mb-1">`+ elemento.name +`</h4>
-                    <small class="text-muted">` + elemento.cost + elemento.currency + `</small>
-             </div>
-             <p class="mb-1">` + elemento.description + `</p>
-         </div>
-     </div>
-    </a>
+        <div class="card col-xs-12 col-sm-6 col-md-3" style="width: 18rem;">
+        <img src="${elemento.imgSrc} " class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">${elemento.name}</h5>
+        <p class="card-text">${elemento.description} </p>
+        <p class="card-text">${elemento.currency} </p>
+        <p class="card-text">${elemento.cost} </p>
+        <a id="linkProduct" onClick="mostrarProducto(`+elemento.id+`)" href="product-info.html" class="btn btn-primary">Ver Producto</a>
+        </div>
+        </div>
  `
                   document.getElementById('cat-list-container').innerHTML += contenido
     }

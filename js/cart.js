@@ -1,8 +1,28 @@
+let productCost = 0;
+let productCount = 0;
+let comissionPercentage = 0;
+
+
+function updateTotalCosts(){
+    let unitProductCostHTML = document.getElementById("unitario");
+    let comissionCostHTML = document.getElementById("porcent");
+    let totalCostHTML = document.getElementById("cosTot");
+
+    let unitCostToShow =  productCost;
+    let comissionToShow = comissionPercentage;
+    let totalCostToShow = (Math.round(productCost + comissionPercentage));
+
+    unitProductCostHTML.innerHTML = unitCostToShow;
+    comissionCostHTML.innerHTML = comissionToShow;
+    totalCostHTML.innerHTML = totalCostToShow
+}
 function subtotal(i, valor){
     let subTotal = document.getElementById('cant'+i).value * valor;
     document.getElementById('sub'+i).innerHTML = subTotal;
-    document.getElementById('cosTot').innerHTML = 'Costo Total: ' + document.getElementById('sub'+i).innerHTML;
+    document.getElementById('cosTot').innerHTML = '$' + comissionPercentage;
+    document.getElementById('unitario').innerHTML = '$' + parseInt(document.getElementById('sub'+i).innerHTML);
 }
+
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(CART_INFO_URL).then(function(resultObj){
         if(resultObj.status === 'ok'){
@@ -26,9 +46,27 @@ document.addEventListener("DOMContentLoaded", function(e){
                         </tr>
                     </tbody>`;
                     document.getElementById('articulo').innerHTML += content;
-                    document.getElementById('cosTot').innerHTML = 'Costo Total: ' + document.getElementById('sub'+i).innerHTML;
+                    document.getElementById("prem").addEventListener("change", function(){
+                        
+                        comissionPercentage = document.getElementById('sub'+i).innerHTML * 15 / 100;
+                        productCost = parseInt(document.getElementById('sub'+i).innerHTML)
+                        updateTotalCosts();
+                    });
+                    
+                    document.getElementById("exp").addEventListener("change", function(){
+                        
+                        comissionPercentage = document.getElementById('sub'+i).innerHTML * 7 / 100;
+                        productCost = parseInt(document.getElementById('sub'+i).innerHTML)
+                        updateTotalCosts();
+                    });
+                    
+                    document.getElementById("estand").addEventListener("change", function(){
+                        
+                        comissionPercentage = document.getElementById('sub'+i).innerHTML * 5 / 100;
+                        productCost = parseInt(document.getElementById('sub'+i).innerHTML)
+                        updateTotalCosts();
+                    });
             };
-            
         }
     })
 });

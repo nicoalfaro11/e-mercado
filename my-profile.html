@@ -33,38 +33,86 @@
   <link href="css/dropzone.css" rel="stylesheet">
 </head>
 
-<body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div id="divHeader" class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <div class="dropdown">
-        <button id="user" class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="cart.html">Mi Carrito</a>
-          <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
-          <a onclick="cerrarSecion()" class="dropdown-item" href="index.html">Cerrar Sesion</a>
+  <body>
+    <nav class="site-header sticky-top py-1 bg-dark">
+        <div id="divHeader" class="container d-flex flex-column flex-md-row justify-content-between">
+            <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
+            <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+            <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+            <div class="dropdown">
+              <button id="user" class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+                <a class="dropdown-item" href="my-profile.html">Mi Perfil</a>
+                <a onclick="cerrarSecion()" class="dropdown-item" href="index.html">Cerrar Sesion</a>
+              </div>
+            </div>
         </div>
+    </nav>
+      <div class="container">
+        <div class="text-center p-4">
+          <h2>Profile</h2>
+          <p class="lead">Ingresa tus datos</p>
+        </div>
+        <div class="container">
+          <div class="row">
+            <h4 class="col-md-12">Informacion</h4>
+            <form class="needs-validation col-md-6" id="sell-info">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="nombrete">Nombre</label>
+                  <input type="text" class="form-control" id="nombrete" placeholder="">
+                  <div class="invalid-feedback">
+                    Ingresa un nombre
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="apellido">Apellido</label>
+                  <input type="text" class="form-control" id="apellido" placeholder="">
+                  <div class="invalid-feedback">
+                    Ingresa tu apellido
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12 mb-3">
+                      <label for="email">e-mail</label>
+                      <input class="form-control" type="email" id="email">
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <label for="edad">Edad</label>
+                    <input class="form-control" type="number" id="edad">
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <label for="tel">Telefono de contacto</label>
+                    <input class="form-control" type="number" id="tel">
+                  </div><br>
+                  <button id="cambios" class="btn btn-primary" type="submit">Guardar Cambios</button>
+              </div>
+            </form>
+            <div class="col ml-5">
+              <div class="container" id="userData">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div><br><br>
+      
+      <footer class="text-muted">
+        <div class="container">
+            <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+            <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+        </div>
+      </footer>
+      <div class="alert fade" role="alert" id="alertResult">
+          <span id="resultSpan"></span>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
       </div>
-    </div>
-  </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
     <span id="resultSpan"></span>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
